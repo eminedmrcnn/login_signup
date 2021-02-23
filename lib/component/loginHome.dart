@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:ortak_proje/signUp.dart';
+import 'package:ortak_proje/component/loginPage/Forms/containerLogin.dart';
+import 'package:ortak_proje/component/loginPage/Forms/textFieldMail.dart';
+import 'package:ortak_proje/component/loginPage/Forms/textFieldPassword.dart';
+import 'package:ortak_proje/component/signUp.dart';
+
 
 class LoginHome extends StatefulWidget {
   @override
@@ -45,35 +49,17 @@ class _LoginHomeState extends State<LoginHome> {
                 child: Column(
                   children: [
                     Container(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          labelText: "email",
-                          hintText: "adınızı girin",
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                        ),
-                      ),
+                      child: TextFieldMail(),
                       width: MediaQuery.of(context).size.width-50,
                     ),
                     SizedBox(
                       height: 20,
                     ),
                     Container(
-                      child: TextField(
-                        obscureText: true,
-                        decoration: InputDecoration(
-                          labelText: "password",
-                          hintText: "şifrenizi giriniz",
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(14),
-                          ),
-                        ),
-                      ),
+                      child: TextFieldPassword(),
                       width: MediaQuery.of(context).size.width-50,
 
                     ),
-
                     SizedBox(height: 10,),
                     Padding(
                       padding: const EdgeInsets.only(left: 240),
@@ -85,25 +71,7 @@ class _LoginHomeState extends State<LoginHome> {
                       height: 20,
                     ),
 
-                    Container(
-                      width: MediaQuery.of(context).size.width-50,
-                      height: 50,
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20)
-                      ),
-                      child: RaisedButton(
-                        color: Colors.pink.shade200,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(10),
-                        ),
-                        onPressed: (){
-                          Navigator.of(context).push(MaterialPageRoute(builder: (context) =>SignUp()));
-                        },
-                        child: Text(
-                            "Logiin"
-                        ),
-                      ),
-                    ),
+                    ContainerLogin(),
                     Padding(
                       padding: const EdgeInsets.only(
                           top: 100,

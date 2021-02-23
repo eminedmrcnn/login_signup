@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:ortak_proje/loginHome.dart';
+import 'file:///C:/flutter_apps/ortak_proje/lib/component/loginHome.dart';
 
 void main() => runApp(LoginApp());
 

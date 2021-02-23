@@ -1,4 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:ortak_proje/component/signup/forms/textFieldFullName.dart';
+import 'package:ortak_proje/component/signup/forms/textFieldMail.dart';
+import 'package:ortak_proje/component/signup/forms/textFieldPassword.dart';
+import 'package:ortak_proje/component/signup/textSignin.dart';
+
+import 'signup/forms/loginText.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -40,40 +46,15 @@ class _SignUpState extends State<SignUp> {
               child: Form(
                 child: Column(
                   children: [
-                    TextField(
-                      decoration: InputDecoration(
-                        labelText: "Full Name",
-                        hintText: "adınızı giriniz.",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                      ),
-                    ),
+                    TextFieldFullName(),
                     SizedBox(
                       height: 20,
                     ),
-                    TextField(
-                      decoration: InputDecoration(
-                        labelText: "EmailID",
-                        hintText: "mail adresinizi girin",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                      ),
-                    ),
+                    TextFieldMail(),
                     SizedBox(
                       height: 20,
                     ),
-                    TextField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        labelText: "Password",
-                        hintText: "adınızı giriniz.",
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                      ),
-                    ),
+                   TextFieldPassword(),
                     SizedBox(
                       height: 30,
                     ),
@@ -86,12 +67,7 @@ class _SignUpState extends State<SignUp> {
                           borderRadius: BorderRadius.circular(10),
                         ),
                         onPressed: () {},
-                        child: Text(
-                          "Login",
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        ),
+                        child: LoginText(),
                       ),
                     ),
                   ],
@@ -107,10 +83,7 @@ class _SignUpState extends State<SignUp> {
                         onTap: (){
                           Navigator.of(context).pop();
                         },
-                        child: Text(
-                          "Sign in",
-                          style: TextStyle(color: Colors.pink),
-                        ),
+                        child: TextSigin(),
                       )
                     ],
                   ),
